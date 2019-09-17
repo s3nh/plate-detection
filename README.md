@@ -57,8 +57,6 @@ Some really helpful implementations
 - [Pytorch SSD](https://github.com/qfgaohao/pytorch-ssd)
 
 
-
-
 #### To dos
 
 - Test pretrained mobilenet_v2, as it is. (in progress)
