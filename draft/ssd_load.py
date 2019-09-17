@@ -2,13 +2,21 @@ import torch
 import torch.nn as nn 
 import torchvision
 import os 
+import cv2
+import sys
 
-
-
+def video_capture(file= None, camera = True):
+    if camera:
+        cap = cv2.VideoCapture(0)
+        cap.set(3, 1920)
+        cap.set(4, 1080)
+    else:
+        assert os.path.exists(file)
+        cap = cv2.VideoCapture(file)
 class SSDLoader():
     def __init__(self, model_path='pretrain/mb2-ssd-lite-mp-0_686.pth'):
         self.model_path = model_path
-        self.model = self.load_model(self.model_path)
+        self.model = self.load_model()
     def __call__(self):
         assert os.path.exists(self.model_path)
         
@@ -18,7 +26,8 @@ class SSDLoader():
     
 def main():
     ssd_l = SSDLoader()
-    ssd_l    
+    print(ssd_l)    
 
 if __name__ == "__main__":
     main()
+    

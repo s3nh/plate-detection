@@ -7,3 +7,4 @@ setup(
     packages =  find_packages(), 
     author = "s3nh"
 )
+
