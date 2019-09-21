@@ -49,13 +49,12 @@ def main():
     #cv2.waitKey(0)
     # Name x1 x2 y1 y2
     _label_coords = [el for el in iml.label.split()]
-    x, y = int(_label_coords[1]) ,  int(_label_coords[3])
-    height =  x - int(_label_coords[2])
-    width = y  -  int(_label_coords[4] )
+    x, y = int(_label_coords[1]) ,  int(_label_coords[2])
+    height =  int(_label_coords[3])
+    width = int(_label_coords[4] )
     label = _label_coords[-1]
-    _l_plate = _image[ y:(y+height), x:(x+width)]
+    _l_plate = _image[ y:(y+width),x:(x+height)]
     _l_plate = Image.fromarray(_l_plate)
-
 
     _l_plate.save('_test_lplate.png')
     
